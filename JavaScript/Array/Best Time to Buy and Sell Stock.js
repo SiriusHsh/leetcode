@@ -14,3 +14,26 @@ var maxProfit = function(prices) {
   }
   return maxProfit;
 };
+
+9.29更新
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+  var minPrice = Number.MAX_VALUE;
+  var maxProfit = 0;
+  for (var i = 0; i < prices.length; i++) {
+      if (prices[i] < minPrice) {
+          minPrice = prices[i];
+      } else if (prices[i] - minPrice > maxProfit) {
+          maxProfit = prices[i] - minPrice;
+      }
+  }
+  return maxProfit;
+};
+/*
+Complexity Analysis
+Time complexity O(n)
+Space complexity O(1)
+*/
